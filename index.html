@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BONZA Asian Spa and Saloon | Luxury Unisex Salon in Hyderabad</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+    
+    body {
+      background-color: #0b0b0b;
+      color: #e5e5e5;
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    /* Top Announcement Bar */
+    .announcement-bar {
+      background: linear-gradient(90deg, #111, #222, #111);
+      color: #d4af37;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #2a2415;
+    }
+
+    /* Header / Navbar */
+    header {
+      background-color: #0d0d0d;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-text {
+      color: #d4af37;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .logo-subtext {
+      font-size: 0.6rem;
+      color: #a0a0a0;
+      display: block;
+      letter-spacing: 1px;
+    }
+
+    .btn-book-nav {
+      background: linear-gradient(135deg, #d4af37, #aa820a);
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 420px;
+      background: url('bonza-hero.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px 20px;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0.4) 60%, rgba(0,0,0,0.6) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .hero-tag {
+      color: #d4af37;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      color: #fff;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span {
+      font-weight: 700;
+      color: #d4af37;
+    }
+
+    .hero-desc {
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background-color: #121212;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 15px 20px;
+      border-y: 1px solid #1f1f1f;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      color: #d4af37;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .stat-item p {
+      color: #888;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      padding: 35px 20px 20px 20px;
+    }
+
+    .section-subtitle {
+      color: #d4af37;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .section-title {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 20px 30px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background-color: #141414;
+      border: 1px solid #222;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .service-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-info {
+      padding: 18px;
+    }
+
+    .service-name {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .service-desc {
+      color: #999;
+      font-size: 0.8rem;
+      margin-bottom: 15px;
+    }
+
+    .btn-card-action {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 8px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+      background-color: #0f0f0f;
+      padding: 30px 20px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .reviews-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .review-img-card {
+      background-color: #141414;
+      border: 1px solid #262626;
+      border-radius: 8px;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    .review-img-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #080808;
+      padding: 30px 20px;
+      border-top: 1px solid #1a1a1a;
+      text-align: center;
+      color: #777;
+      font-size: 0.8rem;
+    }
+
+    .footer-logo {
+      color: #d4af37;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .footer-address {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 400px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    ✦ Experience Luxury Asian Spa & Salon Care in Hyderabad ✦
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <div>
+        <span class="logo-text">BONZA</span>
+        <span class="logo-subtext">ASIAN SPA AND SALOON</span>
+      </div>
+    </div>
+    <a href="https://wa.me/918978139393?text=Hi%20Bonza%20Salon,%20I%20want%20to%20book%20an%20appointment" class="btn-book-nav">Book VIP</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">HYDERABAD'S PREMIER UNISEX DESTINATION</p>
+      <h1 class="hero-title">Refined Aesthetics. <br><span>Recognizably You.</span></h1>
+      <p class="hero-desc">Step into a bespoke spa & hair experience configured with high-end styling setups and organic skin therapies.</p>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <h3>4.9 STAR</h3>
+      <p>Google Rating</p>
+    </div>
+    <div class="stat-item">
+      <h3>VERIFIED</h3>
+      <p>Master Stylists</p>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section>
+    <div class="section-header">
+      <p class="section-subtitle">THE CURATED MENU</p>
+      <h2 class="section-title">Our Specialized Services</h2>
+    </div>
+
+    <div class="services-grid">
+      
+      <!-- Card 1 -->
+      <div class="service-card">
+        <img src="bonza-men-cut.jpg" alt="Men Hair Cut" class="service-img">
+        <div class="service-info">
+          <h3 class="service-name">Men's Hair Cut & Precision Styling</h3>
+          <p class="service-desc">Tailored haircutting, precision fade work, and beard shaping by experienced hair specialists.</p>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Men's%20Hair%20Cut" class="btn-card-action">Book Service</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <img src="bonza-women-cut.jpg" alt="Women Haircut" class="service-img">
+        <div class="service-info">
+          <h3 class="service-name">Women's Bespoke Haircare</h3>
+          <p class="service-desc">Modern hair styling, bobs, blowouts, and custom layering designed to suit your facial dynamics.</p>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Women's%20Haircut" class="btn-card-action">Book Service</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <img src="bonza-colour.jpg" alt="Global Colouring" class="service-img">
+        <div class="service-info">
+          <h3 class="service-name">Global Hair Colouring</h3>
+          <p class="service-desc">Multi-dimensional organic coloring matrix, rich root touch-ups, and hair vitality protection.</p>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Global%20Hair%20Colouring" class="btn-card-action">Book Service</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card">
+        <img src="bonza-texture.jpg" alt="Hair Texture Treatments" class="service-img">
+        <div class="service-info">
+          <h3 class="service-name">Keratin & Nanoplastia Texture Care</h3>
+          <p class="service-desc">Advanced frizz elimination and intense shine restoration for smooth, silky hair.</p>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Keratin%20Treatment" class="btn-card-action">Book Service</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="service-card">
+        <img src="bonza-grooming.jpg" alt="Luxury Shave and Grooming" class="service-img">
+        <div class="service-info">
+          <h3 class="service-name">Gentlemen's Shave & Beard Sculpting</h3>
+          <p class="service-desc">Traditional hot-towel razor shave, beard trim, and facial revitalizing massages.</p>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Grooming%20and%20Shave" class="btn-card-action">Book Service</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="service-card">
+        <img src="bonza-highlights.jpg" alt="Dimensional Highlights" class="service-img">
+        <div class="service-info">
+          <h3 class="service-name">Balayage & Dimensional Highlights</h3>
+          <p class="service-desc">Expert hand-painted balayage and global high-lighting for effortless luxury tone.</p>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Highlights" class="btn-card-action">Book Service</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Google Reviews Proof Section -->
+  <section class="reviews-section">
+    <div class="section-header" style="padding-top:0;">
+      <p class="section-subtitle">VERIFIED SOCIAL PROOF</p>
+      <h2 class="section-title">Real Google Review Proof</h2>
+    </div>
+
+    <div class="reviews-container">
+      <div class="review-img-card">
+        <img src="bonza-review1.png" alt="Google Review AJ Aman">
+      </div>
+      <div class="review-img-card">
+        <img src="bonza-review2.png" alt="Google Review Varimilla Tejaswini">
+      </div>
+      <div class="review-img-card">
+        <img src="bonza-review3.png" alt="Google Review Madhusai Goud">
+      </div>
+      <div class="review-img-card">
+        <img src="bonza-review4.png" alt="Google Review Srinivas Panjala">
+      </div>
+      <div class="review-img-card">
+        <img src="bonza-review5.png" alt="Google Review Nikhil Kumar">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">BONZA ASIAN SPA AND SALOON</div>
+    <div class="footer-address">
+      Check Post, Yousufguda, Hyderabad, Telangana 500045<br>
+      Open Daily: 9:00 AM – 9:00 PM
+    </div>
+    <p>© 2026 BONZA. Built with Luxury Web Standards.</p>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/918978139393?text=Hi%20Bonza%20Asian%20Spa,%20I%20saw%20your%20website%20and%20want%20to%20book" class="whatsapp-float">
+    💬 Book Appointment on WhatsApp
+  </a>
+
+</body>
+</html>
