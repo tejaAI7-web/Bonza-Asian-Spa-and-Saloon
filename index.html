@@ -3,91 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BONZA Asian Spa and Saloon | Luxury Unisex Salon in Hyderabad</title>
+  <title>BONZA Asian Spa and Saloon | Luxury Unisex Salon & Spa</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset & Base Styles */
+    /* Reset & Custom Variables */
+    :root {
+      --bg-cream: #f7f4ef;
+      --bg-card: #ffffff;
+      --bg-accent: #efece6;
+      --text-main: #1c1a17;
+      --text-muted: #6e6a64;
+      --gold-accent: #a38b6d;
+      --gold-border: #d4c8b8;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     }
-    
+
     body {
-      background-color: #0b0b0b;
-      color: #e5e5e5;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
-      padding-bottom: 70px;
+      padding-bottom: 80px;
+      overflow-x: hidden;
     }
 
     /* Top Announcement Bar */
     .announcement-bar {
-      background: linear-gradient(90deg, #111, #222, #111);
-      color: #d4af37;
+      background-color: #1c1a17;
+      color: #dfd5c6;
       text-align: center;
-      padding: 8px 15px;
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
+      padding: 9px 15px;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      border-bottom: 1px solid #2a2415;
+      font-weight: 500;
     }
 
     /* Header / Navbar */
     header {
-      background-color: #0d0d0d;
-      padding: 15px 20px;
+      background-color: var(--bg-cream);
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid #1a1a1a;
+      border-bottom: 1px solid var(--gold-border);
+      backdrop-filter: blur(10px);
     }
 
     .logo-container {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      flex-direction: column;
     }
 
     .logo-text {
-      color: #d4af37;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--text-main);
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
     .logo-subtext {
-      font-size: 0.6rem;
-      color: #a0a0a0;
-      display: block;
-      letter-spacing: 1px;
+      font-size: 0.55rem;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
     .btn-book-nav {
-      background: linear-gradient(135deg, #d4af37, #aa820a);
-      color: #000;
-      padding: 8px 16px;
-      border-radius: 4px;
+      background-color: var(--text-main);
+      color: #fff;
+      padding: 9px 18px;
+      border-radius: 30px;
       text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.7rem;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      transition: background-color 0.3s ease;
     }
 
     /* Hero Section */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 420px;
+      min-height: 480px;
       background: url('bonza-hero.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 30px 20px;
+      padding: 40px 24px;
     }
 
     .hero-overlay {
@@ -96,126 +115,154 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(0deg, rgba(11,11,11,1) 0%, rgba(11,11,11,0.4) 60%, rgba(0,0,0,0.6) 100%);
+      background: linear-gradient(180deg, rgba(28,26,23,0.2) 0%, rgba(28,26,23,0.75) 100%);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 600px;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .hero-tag {
-      color: #d4af37;
-      font-size: 0.75rem;
+      color: #e5d8c5;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      font-weight: 500;
     }
 
     .hero-title {
-      font-size: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.3rem;
       color: #fff;
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 12px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 14px;
     }
 
     .hero-title span {
-      font-weight: 700;
-      color: #d4af37;
+      font-style: italic;
+      color: #f1e4d3;
     }
 
     .hero-desc {
-      font-size: 0.85rem;
-      color: #ccc;
-      margin-bottom: 20px;
+      font-size: 0.82rem;
+      color: #ddd;
+      font-weight: 300;
+      max-width: 480px;
     }
 
-    /* Stats Bar */
-    .stats-bar {
-      background-color: #121212;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      padding: 15px 20px;
-      border-y: 1px solid #1f1f1f;
+    /* Editorial Philosophy Bar */
+    .philosophy-bar {
+      background-color: var(--bg-accent);
+      padding: 30px 24px;
       text-align: center;
+      border-bottom: 1px solid var(--gold-border);
     }
 
-    .stat-item h3 {
-      color: #d4af37;
-      font-size: 1rem;
-      font-weight: 700;
+    .philosophy-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--text-main);
+      font-weight: 400;
+      margin-bottom: 8px;
     }
 
-    .stat-item p {
-      color: #888;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .philosophy-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto;
     }
 
     /* Section Headers */
     .section-header {
       text-align: center;
-      padding: 35px 20px 20px 20px;
+      padding: 45px 24px 25px 24px;
     }
 
     .section-subtitle {
-      color: #d4af37;
-      font-size: 0.7rem;
+      color: var(--gold-accent);
+      font-size: 0.65rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
+      letter-spacing: 3px;
+      margin-bottom: 6px;
+      font-weight: 600;
     }
 
     .section-title {
-      color: #fff;
-      font-size: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--text-main);
+      font-size: 2rem;
       font-weight: 400;
     }
 
-    /* Services Grid */
+    /* Services Grid - Fixed Uniform Cards */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 0 20px 30px 20px;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 25px;
+      padding: 0 24px 40px 24px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .service-card {
-      background-color: #141414;
-      border: 1px solid #222;
-      border-radius: 8px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 6px;
       overflow: hidden;
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    }
+
+    /* Force Exact Equal Image Sizing */
+    .service-img-wrap {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background-color: #eae5de;
     }
 
     .service-img {
       width: 100%;
-      height: 260px;
+      height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-img {
+      transform: scale(1.03);
     }
 
     .service-info {
-      padding: 18px;
+      padding: 22px 20px;
     }
 
     .service-name {
-      color: #fff;
-      font-size: 1.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--text-main);
+      font-size: 1.35rem;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .service-desc {
-      color: #999;
-      font-size: 0.8rem;
-      margin-bottom: 15px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+      font-weight: 300;
+      line-height: 1.5;
     }
 
     .btn-card-action {
@@ -223,27 +270,34 @@
       width: 100%;
       text-align: center;
       background-color: transparent;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      padding: 8px;
-      border-radius: 4px;
+      border: 1px solid var(--text-main);
+      color: var(--text-main);
+      padding: 10px;
+      border-radius: 30px;
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .btn-card-action:hover {
+      background-color: var(--text-main);
+      color: #fff;
     }
 
     /* Automated Reviews Slider Section */
     .reviews-section {
-      background-color: #0f0f0f;
-      padding: 35px 20px;
-      border-top: 1px solid #1a1a1a;
+      background-color: var(--bg-accent);
+      padding: 45px 24px;
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
     }
 
     .reviews-slider {
       position: relative;
-      max-width: 600px;
+      max-width: 550px;
       margin: 0 auto;
       overflow: hidden;
     }
@@ -255,12 +309,12 @@
 
     .review-slide {
       display: none;
-      background-color: #141414;
-      border: 1px solid #262626;
+      background-color: #ffffff;
+      border: 1px solid var(--gold-border);
       border-radius: 8px;
-      padding: 10px;
-      box-sizing: border-box;
-      animation: fadeEffect 0.8s ease-in-out;
+      padding: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      animation: fadeIn 0.8s ease-in-out;
     }
 
     .review-slide.active {
@@ -270,14 +324,8 @@
     .review-slide img {
       width: 100%;
       height: auto;
-      border-radius: 6px;
+      border-radius: 4px;
       display: block;
-    }
-
-    /* Smooth Fade Animation */
-    @keyframes fadeEffect {
-      from { opacity: 0.3; }
-      to { opacity: 1; }
     }
 
     /* Slider Dots Indicators */
@@ -286,69 +334,84 @@
       justify-content: center;
       align-items: center;
       gap: 8px;
-      margin-top: 18px;
+      margin-top: 20px;
     }
 
     .dot {
-      height: 8px;
-      width: 8px;
-      background-color: #333;
+      height: 7px;
+      width: 7px;
+      background-color: #c2b8aa;
       border-radius: 50%;
       display: inline-block;
       transition: all 0.3s ease;
     }
 
     .dot.active {
-      background-color: #d4af37;
-      width: 22px;
+      background-color: var(--text-main);
+      width: 20px;
       border-radius: 10px;
     }
 
     /* Footer */
     footer {
-      background-color: #080808;
-      padding: 30px 20px;
-      border-top: 1px solid #1a1a1a;
+      background-color: #1c1a17;
+      padding: 40px 24px;
       text-align: center;
-      color: #777;
-      font-size: 0.8rem;
+      color: #a39c93;
+      font-size: 0.75rem;
     }
 
     .footer-logo {
-      color: #d4af37;
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      color: #f7f4ef;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
     }
 
     .footer-address {
-      margin-bottom: 15px;
-      line-height: 1.5;
+      margin-bottom: 18px;
+      line-height: 1.6;
+      font-weight: 300;
     }
 
     /* Floating WhatsApp Button */
     .whatsapp-float {
       position: fixed;
-      bottom: 15px;
+      bottom: 18px;
       left: 50%;
       transform: translateX(-50%);
       width: 90%;
-      max-width: 400px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
+      max-width: 380px;
+      background: #1c1a17;
       color: #fff;
+      border: 1px solid var(--gold-border);
       text-align: center;
-      padding: 12px;
+      padding: 13px;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
+    }
+
+    /* CSS Keyframe Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -356,16 +419,14 @@
 
   <!-- Top Announcement Bar -->
   <div class="announcement-bar">
-    ✦ Experience Luxury Asian Spa & Salon Care in Hyderabad ✦
+    ✦ Experience Bespoke Spa & Salon Care in Hyderabad ✦
   </div>
 
   <!-- Header -->
   <header>
     <div class="logo-container">
-      <div>
-        <span class="logo-text">BONZA</span>
-        <span class="logo-subtext">ASIAN SPA AND SALOON</span>
-      </div>
+      <span class="logo-text">BONZA</span>
+      <span class="logo-subtext">Asian Spa and Saloon</span>
     </div>
     <a href="https://wa.me/918978139393?text=Hi%20Bonza%20Salon,%20I%20want%20to%20book%20an%20appointment" class="btn-book-nav">Book VIP</a>
   </header>
@@ -374,28 +435,22 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag">HYDERABAD'S PREMIER UNISEX DESTINATION</p>
+      <p class="hero-tag">Yousufguda's Premier Destination</p>
       <h1 class="hero-title">Refined Aesthetics. <br><span>Recognizably You.</span></h1>
-      <p class="hero-desc">Step into a bespoke spa & hair experience configured with high-end styling setups and organic skin therapies.</p>
+      <p class="hero-desc">Step into a modern, bespoke spa and salon experience engineered for flawless style and organic revitalizing care.</p>
     </div>
   </section>
 
-  <!-- Stats Bar -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <h3>4.9 STAR</h3>
-      <p>Google Rating</p>
-    </div>
-    <div class="stat-item">
-      <h3>VERIFIED</h3>
-      <p>Master Stylists</p>
-    </div>
+  <!-- Editorial Philosophy Bar -->
+  <div class="philosophy-bar">
+    <h3 class="philosophy-title">Expertise You Can See. Judgment You Can Trust.</h3>
+    <p class="philosophy-desc">Our master technicians approach beauty care through an architectural lens, crafting signature makeovers that enhance your personal style.</p>
   </div>
 
   <!-- Services Section -->
   <section>
     <div class="section-header">
-      <p class="section-subtitle">THE CURATED MENU</p>
+      <p class="section-subtitle">The Curated Menu</p>
       <h2 class="section-title">Our Specialized Services</h2>
     </div>
 
@@ -403,61 +458,73 @@
       
       <!-- Card 1 -->
       <div class="service-card">
-        <img src="bonza-men-cut.jpg" alt="Men Hair Cut" class="service-img">
+        <div class="service-img-wrap">
+          <img src="bonza-men-cut.jpg" alt="Men Hair Cut" class="service-img">
+        </div>
         <div class="service-info">
-          <h3 class="service-name">Men's Hair Cut & Precision Styling</h3>
+          <h3 class="service-name">Men's Hair Cut & Styling</h3>
           <p class="service-desc">Tailored haircutting, precision fade work, and beard shaping by experienced hair specialists.</p>
-          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Men's%20Hair%20Cut" class="btn-card-action">Book Service</a>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Men's%20Hair%20Cut" class="btn-card-action">Reserve Service</a>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="service-card">
-        <img src="bonza-women-cut.jpg" alt="Women Haircut" class="service-img">
+        <div class="service-img-wrap">
+          <img src="bonza-women-cut.jpg" alt="Women Haircut" class="service-img">
+        </div>
         <div class="service-info">
           <h3 class="service-name">Women's Bespoke Haircare</h3>
           <p class="service-desc">Modern hair styling, bobs, blowouts, and custom layering designed to suit your facial dynamics.</p>
-          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Women's%20Haircut" class="btn-card-action">Book Service</a>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Women's%20Haircut" class="btn-card-action">Reserve Service</a>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="service-card">
-        <img src="bonza-colour.jpg" alt="Global Colouring" class="service-img">
+        <div class="service-img-wrap">
+          <img src="bonza-colour.jpg" alt="Global Colouring" class="service-img">
+        </div>
         <div class="service-info">
           <h3 class="service-name">Global Hair Colouring</h3>
           <p class="service-desc">Multi-dimensional organic coloring matrix, rich root touch-ups, and hair vitality protection.</p>
-          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Global%20Hair%20Colouring" class="btn-card-action">Book Service</a>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Global%20Hair%20Colouring" class="btn-card-action">Reserve Service</a>
         </div>
       </div>
 
       <!-- Card 4 -->
       <div class="service-card">
-        <img src="bonza-texture.jpg" alt="Hair Texture Treatments" class="service-img">
+        <div class="service-img-wrap">
+          <img src="bonza-texture.jpg" alt="Hair Texture Treatments" class="service-img">
+        </div>
         <div class="service-info">
-          <h3 class="service-name">Keratin & Nanoplastia Texture Care</h3>
+          <h3 class="service-name">Keratin & Texture Care</h3>
           <p class="service-desc">Advanced frizz elimination and intense shine restoration for smooth, silky hair.</p>
-          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Keratin%20Treatment" class="btn-card-action">Book Service</a>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Keratin%20Treatment" class="btn-card-action">Reserve Service</a>
         </div>
       </div>
 
       <!-- Card 5 -->
       <div class="service-card">
-        <img src="bonza-grooming.jpg" alt="Luxury Shave and Grooming" class="service-img">
+        <div class="service-img-wrap">
+          <img src="bonza-grooming.jpg" alt="Luxury Shave and Grooming" class="service-img">
+        </div>
         <div class="service-info">
-          <h3 class="service-name">Gentlemen's Shave & Beard Sculpting</h3>
+          <h3 class="service-name">Gentlemen's Shave & Sculpting</h3>
           <p class="service-desc">Traditional hot-towel razor shave, beard trim, and facial revitalizing massages.</p>
-          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Grooming%20and%20Shave" class="btn-card-action">Book Service</a>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Grooming%20and%20Shave" class="btn-card-action">Reserve Service</a>
         </div>
       </div>
 
       <!-- Card 6 -->
       <div class="service-card">
-        <img src="bonza-highlights.jpg" alt="Dimensional Highlights" class="service-img">
+        <div class="service-img-wrap">
+          <img src="bonza-highlights.jpg" alt="Dimensional Highlights" class="service-img">
+        </div>
         <div class="service-info">
-          <h3 class="service-name">Balayage & Dimensional Highlights</h3>
+          <h3 class="service-name">Balayage & Dimensional Tone</h3>
           <p class="service-desc">Expert hand-painted balayage and global high-lighting for effortless luxury tone.</p>
-          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Highlights" class="btn-card-action">Book Service</a>
+          <a href="https://wa.me/918978139393?text=Hi,%20I%20am%20interested%20in%20Highlights" class="btn-card-action">Reserve Service</a>
         </div>
       </div>
 
@@ -467,7 +534,7 @@
   <!-- Google Reviews Automated 5-Second Slider Section -->
   <section class="reviews-section">
     <div class="section-header" style="padding-top:0;">
-      <p class="section-subtitle">VERIFIED SOCIAL PROOF</p>
+      <p class="section-subtitle">Verified Social Proof</p>
       <h2 class="section-title">Real Google Review Proof</h2>
     </div>
 
@@ -490,7 +557,7 @@
         </div>
       </div>
 
-      <!-- Gold Slider Indicators -->
+      <!-- Slider Indicators -->
       <div class="slider-dots">
         <span class="dot active"></span>
         <span class="dot"></span>
